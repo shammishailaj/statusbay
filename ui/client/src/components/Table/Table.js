@@ -93,6 +93,7 @@ const Table = ({
     },
     sortBy: {
       transformValue: (value) => value,
+      defaultValue: 'time|desc'
     },
     page: {
       transformValue: paramToNumber,
@@ -134,7 +135,7 @@ const Table = ({
 
   const onSort = useCallback((id, direction) => {
     setTableFilters('sortBy', `${id}|${direction}`);
-  }, []);
+  }, [tableFilters]);
   const onLinkClick = e => {
     e.stopPropagation();
   }
@@ -178,7 +179,7 @@ const Table = ({
         sortable: true,
       },
       {
-        id: 'namepsace',
+        id: 'namespace',
         name: t('table.filters.namespace'),
         cell: (row) => row.namespace,
         sortable: true,

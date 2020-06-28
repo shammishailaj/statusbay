@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import Box from '@material-ui/core/Box';
 import {
   useHistory,
   useParams,
@@ -18,7 +17,7 @@ const ApplicationDeployments = () => {
   };
   const filters = useMemo(() => ({
     distinct: false,
-    name: appName,
+    exactName: appName,
   }), []);
   return (
     <PageContent>
